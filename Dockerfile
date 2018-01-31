@@ -92,9 +92,7 @@ RUN groupadd -f mqbrkrs && \
     sed -e 's/^%sudo	.*/%sudo	ALL=NOPASSWD:ALL/g' -i /etc/sudoers
 
 # Copy in script files
-COPY iib_manage.sh /usr/local/bin/
-COPY iib-license-check.sh /usr/local/bin/
-COPY iib_env.sh /usr/local/bin/
+COPY *.sh /usr/local/bin/
 RUN chmod +rx /usr/local/bin/*.sh
 
 # COPY *.sh /usr/local/bin/
