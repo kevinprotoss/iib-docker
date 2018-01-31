@@ -65,7 +65,7 @@ RUN export DEBIAN_FRONTEND=noninteractive \
   && rm -f /etc/apt/sources.list.d/IBM_MQ.list \
   && rm -rf ${DIR_EXTRACT} \
   && rm -rf /var/lib/apt/lists/* \
-#   && rm -rf /var/mqm \
+  && rm -rf /var/mqm \
   # Optional: Set these values for the Bluemix Vulnerability Report
   && sed -i 's/PASS_MAX_DAYS\t99999/PASS_MAX_DAYS\t90/' /etc/login.defs \
   && sed -i 's/PASS_MIN_DAYS\t0/PASS_MIN_DAYS\t1/' /etc/login.defs \

@@ -81,6 +81,7 @@ monitor()
 }
 
 iib-license-check.sh
+sudo -u root -E mq_start.sh
 start
 trap stop SIGTERM SIGINT
 monitor
