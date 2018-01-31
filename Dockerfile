@@ -11,7 +11,6 @@ ARG MQ_URL=https://public.dhe.ibm.com/ibmdl/export/pub/software/websphere/messag
 
 # The MQ Client relevant packages to install
 ARG MQ_PACKAGES="ibmmq-runtime ibmmq-client ibmmq-sdk ibmmq-samples"
-# ARG MQ_PACKAGES="ibmmq-runtime ibmmq-java ibmmq-jre ibmmq-msg-.* ibmmq-client ibmmq-sdk"
 
 # Install additional packages required by MQ and IIB, this install process and the runtime scripts
 RUN export DEBIAN_FRONTEND=noninteractive \
@@ -93,12 +92,7 @@ RUN groupadd -f mqbrkrs && \
 
 # Copy in script files
 COPY *.sh /usr/local/bin/
-RUN chmod +rx /usr/local/bin/*.sh
-
-# COPY *.sh /usr/local/bin/
-# COPY mq-config /etc/mqm/mq-config
-# RUN chmod 755 /usr/local/bin/*.sh \
-#   && chmod 755 /etc/mqm/mq-config
+RUN chmod 755 /usr/local/bin/*.s
 
 # Set BASH_ENV to source mqsiprofile when using docker exec bash -c
 ENV BASH_ENV=/usr/local/bin/iib_env.sh
