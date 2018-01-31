@@ -10,7 +10,7 @@ LABEL "ProductID"="447aefb5fd1342d5b893f3934dfded73" \
 ARG MQ_URL=https://public.dhe.ibm.com/ibmdl/export/pub/software/websphere/messaging/mqadv/mqadv_dev904_ubuntu_x86-64.tar.gz
 
 # The MQ Client relevant packages to install
-ARG MQ_PACKAGES="ibmmq-runtime ibmmq-client"
+ARG MQ_PACKAGES="ibmmq-runtime ibmmq-client ibmmq-sdk ibmmq-samples"
 # ARG MQ_PACKAGES="ibmmq-runtime ibmmq-java ibmmq-jre ibmmq-msg-.* ibmmq-client ibmmq-sdk"
 
 # Install additional packages required by MQ and IIB, this install process and the runtime scripts
@@ -65,7 +65,7 @@ RUN export DEBIAN_FRONTEND=noninteractive \
   && rm -f /etc/apt/sources.list.d/IBM_MQ.list \
   && rm -rf ${DIR_EXTRACT} \
   && rm -rf /var/lib/apt/lists/* \
-  && rm -rf /var/mqm \
+#   && rm -rf /var/mqm \
   # Optional: Set these values for the Bluemix Vulnerability Report
   && sed -i 's/PASS_MAX_DAYS\t99999/PASS_MAX_DAYS\t90/' /etc/login.defs \
   && sed -i 's/PASS_MIN_DAYS\t0/PASS_MIN_DAYS\t1/' /etc/login.defs \
