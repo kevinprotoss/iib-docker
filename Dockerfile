@@ -92,7 +92,7 @@ RUN groupadd -f mqbrkrs && \
 
 # Copy in script files
 COPY *.sh /usr/local/bin/
-RUN chmod 755 /usr/local/bin/*.s
+RUN chmod 755 /usr/local/bin/*.sh
 
 # Set BASH_ENV to source mqsiprofile when using docker exec bash -c
 ENV BASH_ENV=/usr/local/bin/iib_env.sh
