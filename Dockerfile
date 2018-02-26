@@ -1,6 +1,6 @@
 FROM ubuntu:16.04
 
-LABEL maintainer "Junxiang Wei <junxiang.wei@allianz.de>"
+LABEL maintainer "Junxiang Wei <kevinprotoss.wei@gmail.com>"
 
 LABEL "ProductID"="447aefb5fd1342d5b893f3934dfded73" \
       "ProductName"="IBM Integration Bus" \
